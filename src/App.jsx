@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react'
 import { generateTimelines } from './api'
 import './App.css'
 
-// Auto-detect API keys from environment variables (set at build time by Vite)
+// Auto-detect API keys from environment variables (set at build time by Vite).
+// WARNING: VITE_* variables are baked into the JS bundle at build time and are
+// publicly readable by anyone who inspects your deployed site. Only use these
+// for local development. Never set them when deploying to a public host.
 const ENV_ANTHROPIC_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY || ''
 const ENV_OPENAI_KEY = import.meta.env.VITE_OPENAI_API_KEY || ''
 
